@@ -1,5 +1,7 @@
 package com.latelier.tenisu_api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Player {
     private String id;
     private String firstname;
@@ -10,7 +12,10 @@ public class Player {
     private int height;
     private int weight;
     private Country country;
+
+    @JsonProperty("data")
     private PlayerData playerData;
+    private String picture;
 
     public String getId() {
         return id;
@@ -90,5 +95,13 @@ public class Player {
 
     public void setPlayerData(PlayerData playerData) {
         this.playerData = playerData;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }
